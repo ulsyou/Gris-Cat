@@ -26,8 +26,8 @@ const SearchInput = () => {
   return (
     <>
       {openSearchBar ? (
-        <form onSubmit={(event) => submitSearchForm(event)}>
-          <InputGroup>
+        <form onSubmit={(event) => submitSearchForm(event)} style={{ width: '100%' }}>
+          <InputGroup width="100%">
             <InputRightElement>
               <Button
                 onClick={(e) => submitSearchForm(e)}
@@ -41,6 +41,8 @@ const SearchInput = () => {
               borderRadius={20}
               placeholder="Search Products..."
               variant="filled"
+              width="100%"
+              autoFocus
             />
           </InputGroup>
         </form>
@@ -48,6 +50,7 @@ const SearchInput = () => {
         <Button
           onClick={() => setOpenSearchBar(true)}
           backgroundColor="transparent"
+          flexShrink={0}
         >
           <BsSearch />
         </Button>

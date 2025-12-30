@@ -22,7 +22,7 @@ export interface User {
   Address?: Address[]
 }
 
-const apiClient = new APIClient<User>('/user')
+const apiClient = new APIClient<User>('/api/user')
 
 const useUsers = () =>
   useQuery({

@@ -96,6 +96,7 @@ export async function listUsers({ query }: ListUsersInput) {
                 role: true,
                 createdAt: true,
                 updatedAt: true,
+                Address: true,
             },
             orderBy: {
                 createdAt: 'desc',

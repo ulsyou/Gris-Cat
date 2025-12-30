@@ -107,7 +107,7 @@ const CreateProductForm = () => {
         marginBottom={5}
         color="black"
       >
-        Create New Product
+        Thêm sản phẩm
       </Heading>
 
       <Box bgColor="#fff" paddingY={8} paddingX={5}>
@@ -120,8 +120,8 @@ const CreateProductForm = () => {
         >
           <TextInputField
             name="title"
-            label="Title*"
-            placeholder="Product Title"
+            label="Tên sản phẩm*"
+            placeholder="Tên sản phẩm"
             inputStyleProps={inputStyleProps}
           />
 
@@ -137,53 +137,53 @@ const CreateProductForm = () => {
 
           <TextAreaInputField
             name="description"
-            label="Description*"
-            placeholder="A brief description of the product."
+            label="Mô tả*"
+            placeholder="Mô tả sản phẩm"
             inputStyleProps={inputStyleProps}
           />
 
           <TextInputField
             name="price"
-            label="Product Price*"
+            label="Giá sản phẩm*"
             registerOption={{ valueAsNumber: true }}
-            placeholder="6835.25"
+            placeholder="Giá sản phẩm"
             startWith="$"
             inputStyleProps={inputStyleProps}
           />
 
           <TextInputField
             name="SKU"
-            label="SKU*"
+            label="Mã sản phẩm*"
             placeholder="P356103"
             inputStyleProps={inputStyleProps}
           />
 
           <TextInputField
             name="inventory"
-            label="Inventory*"
+            label="Số lượng*"
             registerOption={{ valueAsNumber: true }}
-            placeholder="36"
+            placeholder="Số lượng sản phẩm"
             inputStyleProps={inputStyleProps}
           />
 
           <TextAreaInputField
             name="gallery"
-            label="Gallery*"
-            placeholder={`https://image1.com, https://image2.com, https://image3.com `}
+            label="Ảnh sản phẩm*"
+            placeholder={`Ảnh sản phẩm`}
             inputStyleProps={inputStyleProps}
           />
 
           <TextInputField
             name="hoverImage"
-            label="Hover Image"
-            placeholder="https://"
+            label="Ảnh hover"
+            placeholder="Ảnh hover"
             inputStyleProps={inputStyleProps}
           />
 
           <TextInputField
             name="thumbnail"
-            label="Thumbnail"
-            placeholder="https://"
+            label="Ảnh thu nhỏ"
+            placeholder="Ảnh thu nhỏ"
             inputStyleProps={inputStyleProps}
           />
 

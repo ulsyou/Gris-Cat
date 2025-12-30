@@ -65,7 +65,8 @@ function Table<T>({
                     onClick={header.column.getToggleSortingHandler()}
                     isNumeric={meta?.isNumeric}
                     textAlign={meta?.textAlign}
-                    color="gray.800"
+                    color="black"
+                    fontWeight="600"
                   >
                     {flexRender(
                       header.column.columnDef.header,

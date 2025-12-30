@@ -2,13 +2,24 @@ import axios, { AxiosRequestConfig } from 'axios'
 
 export const url = import.meta.env.VITE_BACKEND_DOMAIN
 
-const token = sessionStorage.getItem('token')
-
 const axiosInstance = axios.create({
   baseURL: url,
-  headers: { 'x-auth-token': token ? token : null },
   withCredentials: true,
 })
+
+// Add request interceptor to include token from sessionStorage on each request
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem('token')
+    if (token) {
+      config.headers['x-auth-token'] = token
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 class APIClient<T> {
   endpoint: string

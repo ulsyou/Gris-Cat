@@ -5,7 +5,6 @@ import {
   Sider,
   useAdminLayoutStore,
 } from '../../components/UI-Components/admin'
-import Footer from '../../components/UI-Components/Footer/Footer'
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   const isOpen = useAdminLayoutStore((s) => s.isOpen)
@@ -18,17 +17,15 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       maxWidth="100vw"
       bgColor="gray.100"
       transition="ease-in-out 0.5"
-      gridTemplateColumns={isOpen ? '280px 1fr' : '64px 1fr'}
-      gridTemplateRows={'auto 1fr auto'}
+      gridTemplateColumns={isOpen ? '180px 1fr' : '64px 1fr'}
+      gridTemplateRows={'auto 1fr'}
       templateAreas={{
         base: `"header header"
                   "content content"
-                  "content content"
-                  "footer footer"`,
+                  "content content"`,
         md: `"header header"
                   "asider content"
-                  "aside content"
-                  "aside footer"`,
+                  "aside content"`,
       }}
     >
       <GridItem area={'header'} className="header">
@@ -39,12 +36,8 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
         <Sider />
       </GridItem>
 
-      <GridItem area="content" className={`main ${isOpen && 'open'} `}>
+      <GridItem area="content" className={`main ${isOpen ? 'open' : ''}`}>
         {children}
-      </GridItem>
-
-      <GridItem area="footer" className="footer">
-        <Footer />
       </GridItem>
     </Grid>
   )

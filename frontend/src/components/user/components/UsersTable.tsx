@@ -9,11 +9,11 @@ const columnHelper = createColumnHelper<User>()
 
 const columns = [
   columnHelper.accessor('name', {
-    cell: (info) => <Text color="gray.800">{info.getValue()}</Text>,
+    cell: (info) => <Text color="black" fontWeight="500">{info.getValue()}</Text>,
     header: 'Tên',
   }),
   columnHelper.accessor('email', {
-    cell: (info) => <Text color="gray.800">{info.getValue()}</Text>,
+    cell: (info) => <Text color="black" fontWeight="500">{info.getValue()}</Text>,
     header: 'Email',
   }),
   columnHelper.display({
@@ -23,7 +23,7 @@ const columns = [
       const addresses = user.Address || []
       
       if (addresses.length === 0) {
-        return <Text color="gray.500">-</Text>
+        return <Text color="black" fontWeight="500">-</Text>
       }
       
       // Format address: street, city, state, country postalCode
@@ -33,13 +33,13 @@ const columns = [
       
       // If multiple addresses, show them separated by line breaks
       if (addressStrings.length === 1) {
-        return <Text color="gray.800">{addressStrings[0]}</Text>
+        return <Text color="black" fontWeight="500">{addressStrings[0]}</Text>
       }
       
       return (
         <Box>
           {addressStrings.map((addr, idx) => (
-            <Text key={idx} color="gray.800" mb={idx < addressStrings.length - 1 ? 1 : 0}>
+            <Text key={idx} color="black" fontWeight="500" mb={idx < addressStrings.length - 1 ? 1 : 0}>
               {addr}
             </Text>
           ))}
@@ -54,7 +54,7 @@ const UsersTable = () => {
   const { data: users, isLoading, error } = useUsers()
 
   if (isLoading) return <Skeleton width="100%" height="380px" />
-  if (error) return <Text>There is an Error.</Text>
+  if (error) return <Text color="black" fontWeight="500">There is an Error.</Text>
 
   return <Table columns={columns} data={users || []} />
 }

@@ -3,9 +3,8 @@ import { IconType } from 'react-icons'
 import {
   AiOutlineHome,
   AiOutlineShoppingCart,
-  AiOutlineTeam,
 } from 'react-icons/ai'
-import { BsCollection } from 'react-icons/bs'
+import { BsCollection, BsBox } from 'react-icons/bs'
 import { FiUsers } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
@@ -19,7 +18,7 @@ export interface IMenu {
 const menus = [
   {
     key: '/admin',
-    title: 'Dashboard',
+    title: 'Tổng quan',
     Icon: AiOutlineHome,
   },
   {
@@ -29,17 +28,17 @@ const menus = [
   },
   {
     key: '/admin/products',
-    title: 'Products',
-    Icon: AiOutlineTeam,
+    title: 'Sản phẩm',
+    Icon: BsBox,
   },
   {
     key: '/admin/orders',
-    title: 'Orders',
+    title: 'Đơn hàng',
     Icon: AiOutlineShoppingCart,
   },
   {
     key: '/admin/users',
-    title: 'Users',
+    title: 'Người dùng',
     Icon: FiUsers,
   },
 ]
@@ -87,7 +86,7 @@ const MenuItem = ({ item, isOpen }: IMenuItem) => {
       <Stack
         key={key}
         direction={isOpen ? 'row' : 'column'}
-        width={isOpen ? '280px' : '64px'}
+        width={isOpen ? '180px' : '64px'}
         justifyContent={isOpen ? 'start' : 'center'}
         columnGap={5}
         alignItems="center"
